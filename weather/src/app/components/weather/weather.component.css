@@ -1,0 +1,16 @@
+.weather-form{
+    padding:20px;
+}
+
+.city{
+    min-width: 300px;
+}
+
+.weather-details{
+    font-size: x-large;
+    margin-left: 20px;
+}
+
+.forecast-value{
+   margin-left: 20px;
+}

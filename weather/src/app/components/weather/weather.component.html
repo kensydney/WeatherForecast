@@ -1,0 +1,51 @@
+<form (ngSubmit)="onSubmit()" class="weather-form" [formGroup]="weatherForm">
+   <select placeholder="Select Country" class="required country" formControlName="countryCtrl">
+      <option value="">
+        Select a Country
+      </option>
+      <option *ngFor="let country of countries" [value]="country.Name">
+        {{country.Name}}
+      </option>
+    </select>
+  <!--<mat-form-field>
+    <input type="text" placeholder="Country" aria-label="Country" matInput [matAutocomplete]="auto" [formControl]="countryCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let country of countries" [value]="country.Name">        
+        <span>{{ country.Name }}</span> 
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>  -->
+
+  <!--<mat-form-field>
+    <input type="text" placeholder="City" aria-label="City" matInput [matAutocomplete]="auto" [formControl]="cityCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let city of cities" [value]="city.city">        
+        <span>{{ city.city }}</span> 
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>  -->
+
+    <select placeholder="Select City" class="required city" formControlName="cityCtrl">
+      <option value="">
+        Select a City
+      </option>
+      <option *ngFor="let city of cities" [value]="city.City">
+        {{city.City}}
+      </option>
+    </select>
+
+
+    <button class="btn" type="submit" [disabled]="!weatherForm.valid">Search</button>
+
+  
+</form>
+
+<mat-card>
+  <mat-card-title class="weather-details">{{weatherTitle}}</mat-card-title>
+  <mat-list>
+    <mat-list-item *ngFor="let property of forecastKey">
+      <span>{{property}}:</span>
+      <span class="forecast-value">{{forecast[property]}}</span>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
