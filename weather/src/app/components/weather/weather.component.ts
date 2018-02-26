@@ -49,17 +49,19 @@ export class WeatherComponent implements OnInit {
   }
 
   onChanges() {
+    const self = this;
     this.weatherForm.get('countryCtrl').valueChanges.subscribe(val => {
       this.cityService.getCities(val)
         .subscribe(res => {
            if (!(res instanceof Array)) {
-             this.cities = [res];
+             self.cities = [res];
            } else {
-             this.cities = res;
+             self.cities = res;
            }
-           this.forecast = null;
-           this.forecastKey = [];
-           this.weatherTitle = '';
+           self.forecast = null;
+           self.forecastKey = [];
+           self.weatherTitle = '';
+           self.weatherForm.patchValue({cityCtrl: ''});
         })
     });
   }
