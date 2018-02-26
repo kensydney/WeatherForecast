@@ -3,7 +3,7 @@
 # Backend
   Open Visual studio 2015 
   
-  Load weather.sln
+  Load weather.sln(/WeatherForecast/server/weather)
   
   Run the app 
   
@@ -19,7 +19,7 @@
   
   NPM version 5.5.1
   
-  Run npm install for all dependencies
+  Run npm install for all dependencies under /WeatherForecast/weather
   
   Run ng serve 
   
