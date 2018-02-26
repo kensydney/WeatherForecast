@@ -53,6 +53,9 @@ export class WeatherComponent implements OnInit {
     this.weatherForm.get('countryCtrl').valueChanges.subscribe(val => {
       this.cityService.getCities(val)
         .subscribe(res => {
+           if (res == null) {
+             self.cities = [];
+           } else
            if (!(res instanceof Array)) {
              self.cities = [res];
            } else {
@@ -70,6 +73,8 @@ export class WeatherComponent implements OnInit {
     this.weatherForm.updateValueAndValidity();
     if (this.weatherForm.invalid) {return; }
 
+    this.forecast = null;
+    this.forecastKey = [];
     const country = this.weatherForm.value.countryCtrl;
     const city = this.weatherForm.value.cityCtrl;
 

@@ -7,23 +7,6 @@
         {{country.Name}}
       </option>
     </select>
-  <!--<mat-form-field>
-    <input type="text" placeholder="Country" aria-label="Country" matInput [matAutocomplete]="auto" [formControl]="countryCtrl">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let country of countries" [value]="country.Name">        
-        <span>{{ country.Name }}</span> 
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>  -->
-
-  <!--<mat-form-field>
-    <input type="text" placeholder="City" aria-label="City" matInput [matAutocomplete]="auto" [formControl]="cityCtrl">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let city of cities" [value]="city.city">        
-        <span>{{ city.city }}</span> 
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>  -->
 
     <select placeholder="Select City" class="required city" formControlName="cityCtrl">
       <option value="">
